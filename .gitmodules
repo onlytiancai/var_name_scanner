@@ -1,0 +1,36 @@
+[submodule "src/codes/tomcat"]
+	path = src/codes/tomcat
+	url = git://github.com/apache/tomcat.git
+[submodule "src/codes/ffmpeg"]
+	path = src/codes/ffmpeg
+	url = git://github.com/FFmpeg/FFmpeg.git
+[submodule "src/codes/x264"]
+	path = src/codes/x264
+	url = git://github.com/DarkShikari/x264-devel.git
+[submodule "src/codes/spring"]
+	path = src/codes/spring
+	url = git://github.com/SpringSource/spring-framework.git
+[submodule "src/codes/struct"]
+	path = src/codes/struct
+	url = git://github.com/krawaller/Struct.git
+[submodule "src/codes/hibernate"]
+	path = src/codes/hibernate
+	url = git://github.com/hibernate/hibernate-orm.git
+[submodule "src/codes/web.py"]
+	path = src/codes/web.py
+	url = git://github.com/webpy/webpy.git
+[submodule "src/codes/flask"]
+	path = src/codes/flask
+	url = git://github.com/mitsuhiko/flask.git
+[submodule "src/codes/django"]
+	path = src/codes/django
+	url = git://github.com/django/django.git
+[submodule "src/codes/signalr"]
+	path = src/codes/signalr
+	url = git://github.com/SignalR/SignalR.git
+[submodule "src/codes/underscore"]
+	path = src/codes/underscore
+	url = git://github.com/documentcloud/underscore.git
+[submodule "src/codes/backbone"]
+	path = src/codes/backbone
+	url = git://github.com/documentcloud/backbone.git
