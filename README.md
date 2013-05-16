@@ -2,6 +2,8 @@
 
 大家都为给类和变量起名烦恼过吧，我想给一些开源项目做个分词，提取一些常用的好名字出来做参考，大家推荐一些名字起得好的开源项目吧。
 
+目前已经完成如下项目的源码分析： backbone django ffmpeg flask hibernate signalr spring struct tomcat underscore web.py x264
+
 ### 基本设计
 1. 首先有个CodeScanner来获取一个目录下的源码文件
 1. 再有个TokenScanner把某个文件里的标识符提取出来，我的不严谨的万能分词算法终于用上了
