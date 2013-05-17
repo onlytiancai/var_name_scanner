@@ -7,6 +7,9 @@ from collections import defaultdict
 
 logging.getLogger().setLevel(logging.NOTSET)
 
+min_word_len = 9
+base_code_dir = './codes'
+
 
 class CodeScanner(object):
     '''
@@ -63,7 +66,7 @@ class TokenScanner(object):
         for result in self.re_tokens.finditer(self.code):
             token_type = self._get_token_type(result)
             token = result.group()
-            if token_type == 'identity' and len(token) > 3:
+            if token_type == 'identity' and len(token) >= min_word_len:
                 yield token
 
 
@@ -133,7 +136,7 @@ class TokensHandler(object):
 
 def get_tokens(project):
     print '*' * 20, project, '*' * 20
-    scanner = CodeScanner(os.path.join('./codes', project))
+    scanner = CodeScanner(os.path.join(base_code_dir, project))
     files = scanner.get_sources()
 
     all_tokens = []
@@ -222,14 +225,12 @@ if __name__ == '__main__':
     if project != 'all':
         tokens = get_tokens(project)
         handler_tokens(project, tokens)
-        sys.exit()
     else:
         all_tokens = []
-        for code_dir in os.listdir('./codes'):
-            if os.path.isdir(os.path.join('./codes', code_dir)):
-                tokens = get_tokens(code_dir)
+        for code_dir in os.listdir(base_code_dir):
+            if os.path.isdir(os.path.join(base_code_dir, code_dir)):
+                tokens = list(get_tokens(code_dir))
                 handler_tokens(code_dir, tokens)
                 all_tokens.extend(tokens)
 
         handler_tokens('all', all_tokens)
-        sys.exit()
